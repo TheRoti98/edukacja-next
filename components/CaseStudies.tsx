@@ -23,7 +23,7 @@ export function CaseStudies() {
             Placówki, z którymi<br />pracowaliśmy
           </h2>
           <p className="text-text-main/60 text-[15px] leading-relaxed mb-14 max-w-lg">
-            Konkretne wyniki. Realne placówki. Zero bullshitu.
+            Konkretne wyniki. Realne placówki. Bez owijania w bawełnę.
           </p>
         </Reveal>
 

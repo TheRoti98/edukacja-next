@@ -1,49 +1,17 @@
 import Image from 'next/image'
 import { Reveal } from './Reveal'
 
-const signals = [
-  {
-    num: '01',
-    label: 'Szuka\nw Google',
-    icon: (
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-      </svg>
-    ),
-  },
-  {
-    num: '02',
-    label: 'Czyta opinie\nzanim zadzwoni',
-    icon: (
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-      </svg>
-    ),
-  },
-  {
-    num: '03',
-    label: 'Porównuje\nkilka miejsc',
-    icon: (
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
-      </svg>
-    ),
-  },
-  {
-    num: '04',
-    label: 'Wybiera\nwidocznych',
-    icon: (
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-      </svg>
-    ),
-  },
+const stats = [
+  { num: '30 dni', label: 'do pierwszych zapisów' },
+  { num: '12 mies.', label: 'aktywne kampanie, nie tylko wrzesień' },
+  { num: '2014', label: 'rok założenia, 10+ lat doświadczenia' },
 ]
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-midnight">
 
+      {/* Background photo */}
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=85"
@@ -53,95 +21,114 @@ export function Hero() {
           className="object-cover object-center"
         />
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(to bottom, rgba(5,0,10,0.92) 0%, rgba(5,0,10,0.82) 50%, rgba(5,0,10,0.95) 100%)',
+          background: 'linear-gradient(to bottom, rgba(5,0,10,0.78) 0%, rgba(5,0,10,0.65) 50%, rgba(5,0,10,0.85) 100%)',
         }} />
       </div>
 
+      {/* Radial glow */}
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 30%, rgba(60,0,128,0.18), transparent)' }}
+      />
+
+      {/* Grain */}
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-          opacity: 0.035,
+          opacity: 0.03,
         }}
       />
 
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 text-center" style={{ paddingTop: '13vh', paddingBottom: '11vh' }}>
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 md:px-10 text-center" style={{ paddingTop: '14vh', paddingBottom: '10vh' }}>
 
+        {/* Badge */}
         <Reveal>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet/25 bg-violet/[0.07] mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
+            <span className="text-[11px] font-black uppercase tracking-[0.16em] text-white/50">
+              Marketing dla placówek edukacyjnych
+            </span>
+          </div>
+        </Reveal>
+
+        {/* Main headline */}
+        <Reveal delay={80}>
           <h1
-            className="font-black tracking-tight leading-[1.0] text-white mb-8 md:mb-14"
-            style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)' }}
+            className="font-black tracking-tight leading-[0.95] text-white mb-6"
+            style={{ fontSize: 'clamp(3rem, 9vw, 8rem)' }}
           >
-            Twój rodzic{' '}
-            <span className="gradient-text">się zmienił.</span>
+            Pełne grupy.
+          </h1>
+          <h1
+            className="font-black tracking-tight leading-[0.95] mb-8"
+            style={{ fontSize: 'clamp(3rem, 9vw, 8rem)' }}
+          >
+            <span className="gradient-text">Przez cały rok.</span>
           </h1>
         </Reveal>
 
-        <Reveal delay={140}>
-          <div className="grid grid-cols-2 md:grid-cols-4 mb-8 md:mb-14">
-            {signals.map((s, i) => (
+        {/* Sub */}
+        <Reveal delay={160}>
+          <p
+            className="text-white/40 leading-relaxed mb-12 mx-auto"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', maxWidth: '36rem' }}
+          >
+            Reklamy, content i strategia dla szkół, przedszkoli i zajęć dodatkowych. Koniec z paniką we wrześniu i pustymi miejscami w grupach.
+          </p>
+        </Reveal>
+
+        {/* CTA */}
+        <Reveal delay={220}>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <a
+              href="#konsultacja"
+              className="gradient-btn font-bold px-8 py-4 rounded-xl shadow-2xl shadow-brand-green/20 text-[15px]"
+            >
+              Umów bezpłatną konsultację →
+            </a>
+            <a
+              href="#problemy"
+              className="text-white/35 hover:text-white/60 transition-colors text-[14px] font-medium flex items-center gap-2"
+            >
+              Zobacz gdzie tracisz pieniądze
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </Reveal>
+
+        {/* Stats row */}
+        <Reveal delay={300}>
+          <div
+            className="inline-grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl overflow-hidden"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            {stats.map((s, i) => (
               <div
                 key={s.num}
-                className={`flex flex-col items-center gap-2 md:gap-3 py-4 md:py-6 px-2 md:px-4 ${
-                  i !== 0 ? 'border-l border-white/[0.07]' : ''
-                } ${i >= 2 ? 'border-t md:border-t-0 border-white/[0.07]' : ''}`}
+                className="flex flex-col items-center gap-1 px-8 py-5 bg-midnight/60 backdrop-blur-sm"
               >
                 <span
-                  className="font-black tabular-nums"
-                  style={{ fontSize: '0.75rem', letterSpacing: '0.15em', color: 'rgba(3,239,35,0.6)' }}
+                  className="font-black gradient-text leading-none"
+                  style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}
                 >
                   {s.num}
                 </span>
-                <span className="text-white [&>svg]:w-8 [&>svg]:h-8 md:[&>svg]:w-[52px] md:[&>svg]:h-[52px]">{s.icon}</span>
-                <span
-                  className="text-white font-semibold leading-snug whitespace-pre-line"
-                  style={{ fontSize: 'clamp(0.78rem, 1.8vw, 1.05rem)' }}
-                >
-                  {s.label}
-                </span>
+                <span className="text-white/30 text-[12px] text-center leading-snug">{s.label}</span>
               </div>
             ))}
           </div>
         </Reveal>
 
-        <Reveal delay={220}>
-          <div
-            className="w-full h-px mb-8 md:mb-14 mx-auto max-w-xs"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(3,239,35,0.4), rgba(0,187,245,0.4), transparent)' }}
-          />
-        </Reveal>
-
-        <Reveal delay={300}>
-          <div className="mb-8 md:mb-10">
-            <p
-              className="font-normal italic text-white/50 leading-tight mb-1"
-              style={{ fontSize: 'clamp(0.95rem, 2.2vw, 1.7rem)' }}
-            >
-              A Twój marketing?
-            </p>
-            <h2
-              className="font-black text-white leading-tight tracking-tight"
-              style={{ fontSize: 'clamp(2rem, 6vw, 5.5rem)' }}
-            >
-              Stoi w miejscu.
-            </h2>
-          </div>
-        </Reveal>
-
-        <Reveal delay={380}>
-          <a
-            href="#problemy"
-            className="inline-flex items-center gap-3 gradient-btn px-6 md:px-8 py-3.5 md:py-4 rounded-md font-bold shadow-xl shadow-brand-green/20 w-auto justify-center"
-            style={{ fontSize: 'clamp(13px, 3.5vw, 15px)' }}
-          >
-            Zobacz gdzie tracisz pieniądze
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-              <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
-        </Reveal>
-
       </div>
+
+      {/* Bottom fade */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 z-10 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, transparent, #05000A)' }}
+      />
     </section>
   )
 }

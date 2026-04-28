@@ -11,11 +11,11 @@ const members = [
     voice: 'Rozwiązuję problemy, których nie widać gołym okiem.',
     stats: [
       { num: '10 lat', label: 'doświad.' },
-      { num: '50+', label: 'obiektów' },
+      { num: '50+', label: 'placówek' },
       { num: '2000h+', label: 'szkoleń' },
     ],
     bio: 'Pozyskiwałem leady i budowałem sprzedaż w Hollywood, Poznaniu i Pcimiu Dolnym, ale także w Niemczech, Wielkiej Brytanii, Wybrzeżu Kości Słoniowej, Togo, Senegalu, Brazylii i innych krajach. Budowałem lub pomagałem budować kilka agencji, uratowałem kilka biznesów, a tysiące zoptymalizowałem. Dzięki kilku tysiącom godzin spędzonym na sali szkoleniowej mogę efektywnie przekazywać klientom wiedzę, żeby nasza współpraca nie ograniczała się jedynie do raportów i klikania reklam.',
-    tags: ['Google Ads', 'Meta Ads', 'HORECA'],
+    tags: ['Google Ads', 'Meta Ads', 'Edukacja'],
   },
   {
     name: 'Hubert Hurban',

@@ -16,167 +16,170 @@ function useVisible(threshold = 0.12) {
 const phases = [
   {
     period: 'Miesiąc 1',
-    bg: '30 DNI',
+    num: '01',
     title: 'Fundament',
     color: '#3c0080',
+    colorLight: 'rgba(60,0,128,0.08)',
+    colorBorder: 'rgba(60,0,128,0.2)',
     items: [
       'Warsztat strategiczny (pełny dzień)',
-      'Audyt techniczny i kampanii',
-      'Setup kampanii Google Ads + Meta',
-      'Plan działań i KPI na 3 miesiące',
+      'Audyt kampanii i strony',
+      'Setup Google Ads + Meta Ads',
+      'KPI i plan na 3 miesiące',
     ],
-    result: 'Pierwsze zapisy w ciągu 30 dni',
+    result: 'Pierwsze zapisy w 30 dni',
   },
   {
     period: 'Co miesiąc',
-    bg: 'WZROST',
-    title: 'Systematyczny wzrost',
+    num: '02',
+    title: 'Wzrost',
     color: '#0077aa',
+    colorLight: 'rgba(0,119,170,0.08)',
+    colorBorder: 'rgba(0,119,170,0.2)',
     items: [
-      'Cotygodniowa optymalizacja kampanii',
-      'Konsultacje i planowanie strategiczne',
-      'Praca z contentem i social media',
+      'Optymalizacja kampanii co tydzień',
+      'Konsultacje strategiczne',
+      'Content i social media',
       'Testy kreacji i grup docelowych',
     ],
-    result: 'Stały dopływ zapisów przez cały rok',
+    result: 'Stały dopływ zapisów cały rok',
   },
   {
     period: 'Co kwartał',
-    bg: 'SKALA',
-    title: 'Pełne grupy i kompetencje',
+    num: '03',
+    title: 'Skala',
     badge: 'PRO',
     color: '#00916e',
+    colorLight: 'rgba(0,145,110,0.08)',
+    colorBorder: 'rgba(0,145,110,0.2)',
     items: [
-      'Dedykowany dzień pracy u Ciebie na miejscu',
-      'Nagrywanie contentu wideo',
-      'Szkolenia zespołu z AI i narzędzi',
-      'Strategia na kolejne 3 miesiące',
+      'Dzień pracy u Ciebie na miejscu',
+      'Nagrywanie wideo',
+      'Szkolenia z AI i narzędzi',
+      'Strategia na kolejny kwartał',
     ],
-    result: 'Pełne grupy i zespół który działa samodzielnie',
+    result: 'Pełne grupy + samodzielny zespół',
   },
 ]
-
-function PhaseRow({ phase, index }: { phase: typeof phases[0]; index: number }) {
-  const { ref, visible } = useVisible()
-  const isLast = index === phases.length - 1
-
-  return (
-    <div
-      ref={ref}
-      className="relative"
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'none' : 'translateY(20px)',
-        transition: `opacity 0.65s ease ${index * 150}ms, transform 0.65s ease ${index * 150}ms`,
-      }}
-    >
-      <div className="relative grid grid-cols-1 md:grid-cols-[220px_1fr] gap-0 overflow-hidden">
-
-        <div className="relative flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-0 pt-0 md:pt-2 pb-4 md:pb-0 pr-8 md:pr-10">
-          <div
-            className="flex-shrink-0 px-4 py-2 rounded-full border text-[11px] font-black uppercase tracking-[0.14em] z-10"
-            style={{
-              borderColor: `${phase.color}30`,
-              color: phase.color,
-              background: `${phase.color}0a`,
-            }}
-          >
-            {phase.period}
-          </div>
-          {phase.badge && (
-            <span className="text-[10px] font-black uppercase tracking-widest gradient-text md:mt-2">
-              {phase.badge}
-            </span>
-          )}
-
-          {!isLast && (
-            <div
-              className="hidden md:block absolute left-[1.6rem] top-12 w-px"
-              style={{
-                height: 'calc(100% + 2rem)',
-                background: `linear-gradient(to bottom, ${phase.color}40, transparent)`,
-              }}
-            />
-          )}
-        </div>
-
-        <div className="relative rounded-2xl overflow-hidden border border-gray1 bg-white mb-6 md:mb-8 group hover:border-violet/20 transition-colors">
-          <div
-            className="absolute right-4 top-1/2 -translate-y-1/2 font-black leading-none pointer-events-none select-none"
-            style={{
-              fontSize: 'clamp(3rem, 7vw, 5.5rem)',
-              color: `${phase.color}07`,
-              letterSpacing: '-0.04em',
-            }}
-          >
-            {phase.bg}
-          </div>
-
-          <div className="relative p-6 md:p-8">
-            <h3
-              className="font-black text-midnight leading-tight tracking-tight mb-5"
-              style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.7rem)' }}
-            >
-              {phase.title}
-            </h3>
-
-            <div className="flex flex-wrap gap-2 mb-6">
-              {phase.items.map(item => (
-                <span
-                  key={item}
-                  className="text-[13px] text-text-main/65 bg-offwhite border border-gray1 rounded-lg px-3 py-1.5 leading-snug"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            <div
-              className="inline-flex items-center gap-2 text-[13px] font-semibold rounded-full px-4 py-2"
-              style={{ background: `${phase.color}0d`, color: phase.color }}
-            >
-              <span style={{ color: phase.color }}>→</span>
-              {phase.result}
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  )
-}
 
 export function ProcessAlt() {
   const { ref, visible } = useVisible(0.08)
 
   return (
-    <section className="bg-offwhite py-24 md:py-32">
-      <div className="max-w-5xl mx-auto px-5 md:px-8">
+    <section className="bg-white py-24 md:py-32 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
 
         <div
           ref={ref}
+          className="mb-16"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? 'none' : 'translateY(16px)',
             transition: 'opacity 0.6s ease, transform 0.6s ease',
           }}
         >
-          <p className="section-tag mb-4">Proces</p>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="h-px flex-1 max-w-[3rem]" style={{ background: 'linear-gradient(90deg, #03ef23, #00bbf5)' }} />
+            <p className="text-[11px] font-black uppercase tracking-[0.18em] text-text-main/35">Proces</p>
+          </div>
           <h2
-            className="font-black text-violet leading-tight tracking-tight mb-4"
+            className="font-black text-midnight leading-tight tracking-tight mb-4"
             style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
           >
-            Jak wygląda<br />współpraca w praktyce?
+            Jak wygląda<br />
+            <span style={{ color: '#3c0080' }}>współpraca w praktyce?</span>
           </h2>
-          <p className="text-text-main/55 text-[15px] leading-relaxed mb-14 max-w-lg">
+          <p className="text-text-main/50 text-[15px] max-w-lg leading-relaxed">
             Trzy etapy, każdy z mierzalnym efektem. Pierwsze zapisy w ciągu 30 dni.
           </p>
         </div>
 
-        <div>
-          {phases.map((phase, i) => (
-            <PhaseRow key={phase.period} phase={phase} index={i} />
-          ))}
+        {/* Horizontal phases */}
+        <div className="relative">
+
+          {/* Connecting line - desktop only */}
+          <div
+            className="hidden md:block absolute top-[3.5rem] left-[calc(33.33%/2)] right-[calc(33.33%/2)] h-px"
+            style={{ background: 'linear-gradient(90deg, rgba(60,0,128,0.2), rgba(0,119,170,0.2), rgba(0,145,110,0.2))' }}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {phases.map((phase, i) => (
+              <div
+                key={phase.num}
+                style={{
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? 'none' : 'translateY(28px)',
+                  transition: `opacity 0.65s ease ${i * 180}ms, transform 0.65s ease ${i * 180}ms`,
+                }}
+              >
+                {/* Phase number circle */}
+                <div className="flex items-center gap-4 mb-6 relative z-10">
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 border-4 border-white"
+                    style={{ background: phase.colorLight, boxShadow: `0 0 0 1px ${phase.colorBorder}` }}
+                  >
+                    <span
+                      className="font-black text-[1rem]"
+                      style={{ color: phase.color }}
+                    >
+                      {phase.num}
+                    </span>
+                  </div>
+                  <div>
+                    <span
+                      className="text-[10px] font-black uppercase tracking-[0.14em]"
+                      style={{ color: phase.color }}
+                    >
+                      {phase.period}
+                    </span>
+                    {phase.badge && (
+                      <span className="ml-2 text-[9px] font-black uppercase tracking-widest gradient-text">{phase.badge}</span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Card */}
+                <div
+                  className="rounded-2xl p-6 h-full border transition-all duration-300 hover:-translate-y-0.5"
+                  style={{ background: phase.colorLight, borderColor: phase.colorBorder }}
+                >
+                  <h3
+                    className="font-black leading-tight tracking-tight mb-5"
+                    style={{ fontSize: '1.4rem', color: phase.color }}
+                  >
+                    {phase.title}
+                  </h3>
+
+                  <ul className="flex flex-col gap-3 mb-6">
+                    {phase.items.map(item => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <span
+                          className="w-4 h-4 rounded-full flex-shrink-0 flex items-center justify-center mt-0.5"
+                          style={{ background: phase.color }}
+                        >
+                          <svg width="7" height="7" viewBox="0 0 8 8" fill="none">
+                            <path d="M1.5 4l1.8 1.8L6.5 2" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          </svg>
+                        </span>
+                        <span className="text-[13px] text-text-main/70 leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div
+                    className="flex items-center gap-2 text-[12px] font-bold pt-4 border-t"
+                    style={{ borderColor: phase.colorBorder, color: phase.color }}
+                  >
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {phase.result}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>
