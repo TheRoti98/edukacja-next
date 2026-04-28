@@ -1,12 +1,6 @@
 import Image from 'next/image'
 import { Reveal } from './Reveal'
 
-const stats = [
-  { num: '30 dni', label: 'do pierwszych zapisów' },
-  { num: '12 mies.', label: 'aktywne kampanie, nie tylko wrzesień' },
-  { num: '2014', label: 'rok założenia, 10+ lat doświadczenia' },
-]
-
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-midnight">
@@ -80,7 +74,7 @@ export function Hero() {
 
         {/* CTA */}
         <Reveal delay={220}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="#konsultacja"
               className="gradient-btn font-bold px-8 py-4 rounded-xl shadow-2xl shadow-brand-green/20 text-[15px]"
@@ -89,36 +83,14 @@ export function Hero() {
             </a>
             <a
               href="#problemy"
-              className="text-white/35 hover:text-white/60 transition-colors text-[14px] font-medium flex items-center gap-2"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-[15px] text-midnight transition-all duration-200 hover:opacity-90"
+              style={{ background: 'rgba(255,255,255,0.92)' }}
             >
               Zobacz gdzie tracisz pieniądze
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                 <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-          </div>
-        </Reveal>
-
-        {/* Stats row */}
-        <Reveal delay={300}>
-          <div
-            className="inline-grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl overflow-hidden"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.07)' }}
-          >
-            {stats.map((s, i) => (
-              <div
-                key={s.num}
-                className="flex flex-col items-center gap-1 px-8 py-5 bg-midnight/60 backdrop-blur-sm"
-              >
-                <span
-                  className="font-black gradient-text leading-none"
-                  style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)' }}
-                >
-                  {s.num}
-                </span>
-                <span className="text-white/30 text-[12px] text-center leading-snug">{s.label}</span>
-              </div>
-            ))}
           </div>
         </Reveal>
 
