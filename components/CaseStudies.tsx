@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Reveal } from './Reveal'
 
 const clients = [
@@ -22,9 +23,28 @@ export function CaseStudies() {
           <h2 className="font-black text-violet leading-tight tracking-tight mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}>
             Placówki, z którymi<br />pracowaliśmy
           </h2>
-          <p className="text-text-main/60 text-[15px] leading-relaxed mb-14 max-w-lg">
+          <p className="text-text-main/60 text-[15px] leading-relaxed mb-10 max-w-lg">
             Konkretne wyniki. Realne placówki. Bez owijania w bawełnę.
           </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-10" style={{ height: '340px' }}>
+            <Image
+              src="/przedszkole.jpg"
+              alt="Nowoczesna sala zajęć"
+              fill
+              className="object-cover object-center"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.0) 60%, rgba(255,255,255,0.6) 100%)' }}
+            />
+            <div className="absolute bottom-6 left-6">
+              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-white/70 mb-1">Tak wyglądają nasze placówki</p>
+              <p className="font-black text-white text-[1.2rem] leading-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>Nowoczesne. Przyjazne. Pełne.</p>
+            </div>
+          </div>
         </Reveal>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

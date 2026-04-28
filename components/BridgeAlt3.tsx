@@ -154,7 +154,7 @@ export function BridgeAlt3() {
           >
             <div className="relative rounded-2xl overflow-hidden" style={{ paddingTop: '130%' }}>
               <Image
-                src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=800&q=85"
+                src="/dzieci.jpg"
                 alt="Zajęcia edukacyjne"
                 fill
                 className="object-cover"

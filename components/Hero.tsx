@@ -14,7 +14,7 @@ export function Hero() {
       {/* Background photo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=85"
+          src="/hero.jpg"
           alt="Placówka edukacyjna"
           fill
           priority
