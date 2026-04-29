@@ -22,12 +22,12 @@ const phases = [
     colorLight: 'rgba(60,0,128,0.08)',
     colorBorder: 'rgba(60,0,128,0.2)',
     items: [
-      'Warsztat strategiczny (pełny dzień)',
+      'Warsztat strategiczny',
       'Audyt kampanii i strony',
       'Setup Google Ads + Meta Ads',
       'KPI i plan na 3 miesiące',
     ],
-    result: 'Pierwsze zapisy w 30 dni',
+    result: 'Pierwsze zapisy nawet w 7 dni',
   },
   {
     period: 'Co miesiąc',
