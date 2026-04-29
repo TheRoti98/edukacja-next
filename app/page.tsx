@@ -6,7 +6,7 @@ import { CaseStudies } from '@/components/CaseStudies'
 import { SolutionAlt } from '@/components/SolutionAlt'
 import { WhatYouGet } from '@/components/WhatYouGet'
 import { ProcessAlt } from '@/components/ProcessAlt'
-import { ThreePerspectives } from '@/components/ThreePerspectives'
+import { ThreePerspectivesV2 } from '@/components/ThreePerspectivesV2'
 import { TeamAlt } from '@/components/TeamAlt'
 import { FAQ } from '@/components/FAQ'
 import { CTASection } from '@/components/CTASection'
@@ -24,7 +24,7 @@ export default function Page() {
         <SolutionAlt />
         <WhatYouGet />
         <ProcessAlt />
-        <ThreePerspectives />
+        <ThreePerspectivesV2 />
         <TeamAlt />
         <FAQ />
         <CTASection />
