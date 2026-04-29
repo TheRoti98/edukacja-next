@@ -65,7 +65,7 @@ export function Hero() {
         {/* Sub */}
         <Reveal delay={160}>
           <p
-            className="text-white/40 leading-relaxed mb-12 mx-auto"
+            className="text-white/75 leading-relaxed mb-12 mx-auto"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', maxWidth: '36rem' }}
           >
             Reklamy, content i strategia dla szkół, przedszkoli i zajęć dodatkowych. Koniec z paniką we wrześniu i pustymi miejscami w grupach.
@@ -74,17 +74,10 @@ export function Hero() {
 
         {/* CTA */}
         <Reveal delay={220}>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#konsultacja"
-              className="gradient-btn font-bold px-8 py-4 rounded-xl shadow-2xl shadow-brand-green/20 text-[15px]"
-            >
-              Umów bezpłatną konsultację →
-            </a>
+          <div className="flex items-center justify-center">
             <a
               href="#problemy"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-xl font-bold text-[15px] text-midnight transition-all duration-200 hover:opacity-90"
-              style={{ background: 'rgba(255,255,255,0.92)' }}
+              className="gradient-btn font-bold px-8 py-4 rounded-xl shadow-2xl shadow-brand-green/20 text-[15px] inline-flex items-center gap-2.5"
             >
               Zobacz gdzie tracisz pieniądze
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
