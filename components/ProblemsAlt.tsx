@@ -16,7 +16,7 @@ function useVisible() {
 const problems = [
   {
     num: '01',
-    title: 'Agencje i specjaliści robią Cię w konia.',
+    title: 'Agencje i specjaliści nie mówią Ci prawdy.',
     body: 'Biorą budżet, wysyłają raport którego nie rozumiesz i tłumaczą dlaczego wyniki są "takie a nie inne". Twoje pieniądze uczą kogoś fachu.',
     tags: ['Zero transparentności', 'Budżet bez kontroli', 'Rotacja opiekunów'],
   },
