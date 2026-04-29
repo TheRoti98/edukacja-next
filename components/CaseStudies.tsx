@@ -19,17 +19,7 @@ export function CaseStudies() {
     <section id="wyniki" className="bg-white py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-5 md:px-8">
         <Reveal>
-          <p className="section-tag">Wyniki</p>
-          <h2 className="font-black text-violet leading-tight tracking-tight mb-4" style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}>
-            Placówki, z którymi<br />pracowaliśmy
-          </h2>
-          <p className="text-text-main/60 text-[15px] leading-relaxed mb-10 max-w-lg">
-            Konkretne wyniki. Realne placówki. Bez owijania w bawełnę.
-          </p>
-        </Reveal>
-
-        <Reveal>
-          <div className="relative w-full rounded-2xl overflow-hidden mb-10" style={{ height: '340px' }}>
+          <div className="relative w-full rounded-2xl overflow-hidden mb-10" style={{ height: '380px' }}>
             <Image
               src="/przedszkole.jpg"
               alt="Nowoczesna sala zajęć"
@@ -38,11 +28,19 @@ export function CaseStudies() {
             />
             <div
               className="absolute inset-0"
-              style={{ background: 'linear-gradient(to right, rgba(255,255,255,0.0) 60%, rgba(255,255,255,0.6) 100%)' }}
+              style={{ background: 'linear-gradient(to right, rgba(5,0,10,0.72) 0%, rgba(5,0,10,0.3) 60%, rgba(5,0,10,0.1) 100%)' }}
             />
-            <div className="absolute bottom-6 left-6">
-              <p className="text-[11px] font-black uppercase tracking-[0.16em] text-white/70 mb-1">Tak wyglądają nasze placówki</p>
-              <p className="font-black text-white text-[1.2rem] leading-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>Nowoczesne. Przyjazne. Pełne.</p>
+            <div className="absolute bottom-8 left-8 md:bottom-10 md:left-10">
+              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-white/50 mb-4">Wyniki</p>
+              <h2
+                className="font-black text-white leading-tight tracking-tight mb-3"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', textShadow: '0 2px 16px rgba(0,0,0,0.4)' }}
+              >
+                Placówki, z którymi<br />pracowaliśmy
+              </h2>
+              <p className="text-white/65 text-[15px] leading-relaxed max-w-lg">
+                Konkretne wyniki. Realne placówki. Bez owijania w bawełnę.
+              </p>
             </div>
           </div>
         </Reveal>
